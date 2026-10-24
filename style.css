@@ -1,0 +1,96 @@
+:root {
+  --navy: #292044;
+  --red: #a52d56;
+  --pale-blue: #f4eff7;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: var(--pale-blue);
+  color: #242424;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.container {
+  width: 92%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+header, footer {
+  background-color: var(--navy);
+  color: white;
+  padding: 20px 0;
+}
+
+h1 { margin-bottom: 8px; }
+h2 { color: var(--navy); }
+nav a, footer a { color: white; }
+nav a { margin-right: 20px; }
+nav a:hover { text-decoration: underline; }
+
+main section {
+  margin: 25px 0;
+}
+
+form, #film-details, .film-card {
+  background-color: white;
+  border: 1px solid #bec9cf;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+form { display: grid; gap: 14px; }
+.field { display: flex; flex-direction: column; gap: 5px; }
+.field label { font-weight: bold; }
+.checkbox-field { flex-direction: row; align-items: center; }
+
+input[type="search"], select {
+  width: 100%;
+  padding: 10px;
+  font: inherit;
+  border: 1px solid #666;
+  border-radius: 4px;
+}
+
+button {
+  background-color: var(--navy);
+  color: white;
+  border: 2px solid var(--navy);
+  border-radius: 4px;
+  padding: 10px 14px;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover { background-color: #393568; }
+.secondary-button { color: var(--navy); background: white; }
+.secondary-button:hover { background: #f4f3fa; }
+:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+.buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+
+#film-results {
+  padding: 0;
+  list-style: none;
+}
+.film-grid { display: grid; gap: 15px; }
+.film-card img {
+  display: block;
+  width: 100%;
+  max-height: 330px;
+  object-fit: contain;
+}
+.film-card h3 { color: var(--navy); }
+.film-card button { margin-top: 6px; }
+#film-details { min-height: 130px; }
+#details-form { margin-bottom: 16px; }
+
+/* Mobile-first: two columns only on larger screens. */
+@media (min-width: 700px) {
+  form { grid-template-columns: 1fr 1fr; }
+  .checkbox-field, .buttons { grid-column: 1 / -1; }
+  .film-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebTech Film Database</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>WebTech Film Database</h1>
+      <p>Search for Studio Ghibli films and find out more about them.</p>
+      <nav aria-label="Main navigation">
+        <a href="#search-section">Search films</a>
+        <a href="#film-details">Film details</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="search-section" aria-labelledby="search-heading">
+      <h2 id="search-heading">Find a film</h2>
+
+      <form id="search-form">
+        <div class="field">
+          <label for="search-title">Film title</label>
+          <input type="search" id="search-title" name="title" placeholder="e.g. Totoro">
+        </div>
+
+        <div class="field">
+          <label for="sort-films">Sort films</label>
+          <select id="sort-films" name="sort">
+            <option value="title">Title (A–Z)</option>
+            <option value="newest">Newest first</option>
+          </select>
+        </div>
+
+        <div class="field checkbox-field">
+          <input type="checkbox" id="high-rating" name="high-rating">
+          <label for="high-rating">Only show films rated 90 or above</label>
+        </div>
+
+        <div class="buttons">
+          <button type="submit">Search</button>
+          <button type="button" id="clear-search" class="secondary-button">Clear</button>
+        </div>
+      </form>
+
+      <p id="results-status" role="status" aria-live="polite">Loading films...</p>
+      <ul id="film-results" class="film-grid" aria-label="Film results"></ul>
+    </section>
+
+    <section id="film-details" aria-labelledby="details-heading">
+      <h2 id="details-heading">Film details</h2>
+      <form id="details-form">
+        <div class="field">
+          <label for="film-choice">Choose a film</label>
+          <select id="film-choice" required>
+            <option value="">Choose a film</option>
+          </select>
+        </div>
+        <div class="buttons">
+          <button type="submit">View details</button>
+        </div>
+      </form>
+      <div id="details-content" role="status" aria-live="polite">
+        <p>Select a film above to see its director, running time and description.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Film data provided by the <a href="https://ghibliapi.vercel.app/">Studio Ghibli API</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>
