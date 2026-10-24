@@ -88,7 +88,6 @@ button:hover { background-color: #393568; }
 #film-details { min-height: 130px; }
 #details-form { margin-bottom: 16px; }
 
-/* Mobile-first: two columns only on larger screens. */
 @media (min-width: 700px) {
   form { grid-template-columns: 1fr 1fr; }
   .checkbox-field, .buttons { grid-column: 1 / -1; }
